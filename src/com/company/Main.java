@@ -23,7 +23,7 @@ public class Main {
 
         final Dice dice = new Dice(6);
         final Board board = new Board(snakeList, ladderList, 100);
-        final SnakesAndLadders snakesAndLadders = new SnakesAndLadders(playerList, dice, board,board.getSize());
+        final SnakesAndLadders snakesAndLadders = new SnakesAndLadders(playerList, dice, board);
 
         snakesAndLadders.play();
     }

@@ -8,13 +8,11 @@ public class SnakesAndLadders {
     private final List<Player> playerList;
     private final Dice dice;
     private final Board board;
-    private final int endPosition;
 
-    public SnakesAndLadders(List<Player> playerList, Dice dice, Board board, int endPosition) {
+    public SnakesAndLadders(List<Player> playerList, Dice dice, Board board) {
         this.playerList = playerList;
         this.dice = dice;
         this.board = board;
-        this.endPosition = endPosition;
     }
 
     /**
@@ -34,7 +32,7 @@ public class SnakesAndLadders {
 
                 move(player, number);
 
-                if (player.getPosition() == endPosition) {
+                if (player.getPosition() == board.getSize()) {
                     final String winMessage = String.format("%s WON!!", player.getName());
                     System.out.println(winMessage);
                     flag = false;
@@ -56,7 +54,7 @@ public class SnakesAndLadders {
         final int startPosition = player.getPosition();
         int endPosition = startPosition + steps;
 
-        if (endPosition > this.endPosition) {
+        if (endPosition > board.getSize()) {
             final String notMoveMsg = String.format("%s rolled %d but can't move", player.getName(), steps);
             System.out.println(notMoveMsg);
             return;
