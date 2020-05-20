@@ -22,8 +22,8 @@ public class Main {
         final List<Player> playerList = getPlayersList(players, scanner);
 
         final Dice dice = new Dice(6);
-        final Board board = new Board(snakeList, ladderList);
-        final SnakesAndLadders snakesAndLadders = new SnakesAndLadders(playerList, dice, board, 1, 100);
+        final Board board = new Board(snakeList, ladderList, 100);
+        final SnakesAndLadders snakesAndLadders = new SnakesAndLadders(playerList, dice, board,board.getSize());
 
         snakesAndLadders.play();
     }

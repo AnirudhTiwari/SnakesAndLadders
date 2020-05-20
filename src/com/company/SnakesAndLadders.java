@@ -8,14 +8,12 @@ public class SnakesAndLadders {
     private final List<Player> playerList;
     private final Dice dice;
     private final Board board;
-    private final int startPosition;
     private final int endPosition;
 
-    public SnakesAndLadders(List<Player> playerList, Dice dice, Board board, int startPosition, int endPosition) {
+    public SnakesAndLadders(List<Player> playerList, Dice dice, Board board, int endPosition) {
         this.playerList = playerList;
         this.dice = dice;
         this.board = board;
-        this.startPosition = startPosition;
         this.endPosition = endPosition;
     }
 

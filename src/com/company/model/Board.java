@@ -11,11 +11,17 @@ public class Board {
         return ladders;
     }
 
+    public int getSize() {
+        return size;
+    }
     private final List<Snake> snakes;
     private final List<Ladder> ladders;
 
-    public Board(List<Snake> snakes, List<Ladder> ladders) {
+    private final int size;
+
+    public Board(List<Snake> snakes, List<Ladder> ladders, int size) {
         this.snakes = snakes;
         this.ladders = ladders;
+        this.size = size;
     }
 }
