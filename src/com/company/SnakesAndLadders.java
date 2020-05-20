@@ -47,18 +47,24 @@ public class SnakesAndLadders {
         System.out.println("GAME OVER");
     }
 
-
-    private void move(final Player player, final int number) {
+    /**
+     * Moves the given player by the given steps. If the player encounters a snake or a ladder then they player's
+     * position is changed till he/she finally settles in a place where there are no snakes/ladders. If the number of
+     * steps ensure that the player crosses the board then that move is ignored.
+     * @param player
+     * @param steps
+     */
+    private void move(final Player player, final int steps) {
         final int startPosition = player.getPosition();
-        int endPosition = startPosition + number;
+        int endPosition = startPosition + steps;
 
         if (endPosition > this.endPosition) {
-            final String notMoveMsg = String.format("%s rolled %d but can't move", player.getName(), number);
+            final String notMoveMsg = String.format("%s rolled %d but can't move", player.getName(), steps);
             System.out.println(notMoveMsg);
             return;
         }
 
-        final String diceRollMsg = String.format("%s rolled %d and moved from %d to %d", player.getName(), number,
+        final String diceRollMsg = String.format("%s rolled %d and moved from %d to %d", player.getName(), steps,
                 startPosition, endPosition);
 
         System.out.println(diceRollMsg);
